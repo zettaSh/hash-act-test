@@ -4,5 +4,7 @@ jobs:
   exec:
     runs-on: 	ubuntu-latest
     steps:
+      - uses: https://github.com/actions/checkout@v3
+
       - name: Echo hash
-        run: echo result-is-${{ hashFiles('**/go.sum') }}
+        run: echo result-is-${{ hashFiles('go.sum') }}
