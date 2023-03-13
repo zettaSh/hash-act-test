@@ -1,4 +1,4 @@
-name: Test Go Hash Action on GT
+name: Test Go Hash Action on GH
 on: push
 jobs:
   exec:
