@@ -11,7 +11,7 @@ jobs:
       - uses: https://gitea.com/Zettat123/go-hashfiles@main
         id: get-hash
         with: 
-          path-set: 'go.sum,./modules/admin/README.txt'
+          path-set: 'go.sum'
 
       - name: Echo hash
         run: echo ${{ steps.get-hash.outputs.hash-result }}
