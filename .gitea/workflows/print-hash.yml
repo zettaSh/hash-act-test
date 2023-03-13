@@ -2,7 +2,16 @@ name: Test Go Hash Action on GT
 on: push
 jobs:
   exec:
-    runs-on: 	ubuntu-latest
+    runs-on: 	host-ubuntu-20.04
     steps:
+      - uses: https://github.com/actions/checkout@v3
+        with:
+          github-server-url: 'http://host.docker.internal:3000'
+
+      - uses: https://gitea.com/Zettat123/go-hashfiles@main
+        id: get-hash
+        with: 
+          - path-set: 'go.sum,./modules/admin/*'
+
       - name: Echo hash
-        run: echo ${{ hash("go.sum", "modules/admin/*") }}
+        run: echo ${{ steps.get-hash.outputs.hash-result }}
