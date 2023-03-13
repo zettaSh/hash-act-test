@@ -1,0 +1,8 @@
+name: Test Go Hash Action on GH
+on: push
+jobs:
+  exec:
+    runs-on: 	ubuntu-latest
+    steps:
+      - name: Echo hash
+        run: echo ${{ hash("go.sum", "modules/admin/*") }}
