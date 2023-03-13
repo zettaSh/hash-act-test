@@ -5,4 +5,4 @@ jobs:
     runs-on: 	ubuntu-latest
     steps:
       - name: Echo hash
-        run: echo ${{ hash("go.sum", "modules/admin/*") }}
+        run: echo ${{ hashFiles("go.sum", "modules/admin/*") }}
