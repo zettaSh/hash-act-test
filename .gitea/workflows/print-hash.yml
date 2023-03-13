@@ -2,7 +2,7 @@ name: Test Go Hash Action on GT
 on: push
 jobs:
   exec:
-    runs-on: 	host-ubuntu-20.04
+    runs-on: host-ubuntu-20.04
     steps:
       - uses: https://github.com/actions/checkout@v3
         with:
