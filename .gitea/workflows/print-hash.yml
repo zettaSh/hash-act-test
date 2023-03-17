@@ -14,6 +14,7 @@ jobs:
           patterns: |-
             go.sum
             ./modules/admin/*
+            **/package-lock.json
 
       - name: Echo hash
         run: echo ${{ steps.get-hash.outputs.hash }}
